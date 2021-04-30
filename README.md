@@ -65,6 +65,8 @@ Cuadratic Snowflake | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90
 Hexagonal Gosper curve | L->L+R++R-L--LL-R+ R->-L+RR++R+L--L-R w=L n=4 alpha0=60 angle(i)=60
 Axial Tree (node-rewriting) | X->F-[[X]+X]+F[+FX]-X F->FF w=X n=5 alpha0=90 angle(i)=22.5
 
+Additional rulesets can be found at: https://cgjennings.ca/articles/l-systems/
+
 ## Based on the original work done by:
 
 - Author: **Gianni Perez** @ [skylabus.com](https://www.skylabus.com) or at gianni.perez@us.ibm.com

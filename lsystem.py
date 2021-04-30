@@ -14,7 +14,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-n', '--name', default="dragon_curve", type=str,
                         help='Which figure do you want to render?')
-    parser.add_argument('-i', '--iter', default=10, type=int,   
+    parser.add_argument('-i', '--iter', default=None, type=int,   
                         help='How many iterations to run? Careful, more than 25 is probably too many unless you have a lot of time.')
     parser.add_argument('-w', '--workers', default=4, type=int,   
                         help='How many workers to use?')
@@ -33,7 +33,10 @@ if __name__ == "__main__":
         SYSTEM_RULES[key] = value
     
     axiom = rules['axiom']
-    iterations = args.iter
+    if args.iter is None:
+        iterations = rules['iterations']
+    else:
+        iterations = args.iter
     segment_length = rules['step_size']
     alpha_zero = rules['initial_heading']
     angle = rules['angle_increment']

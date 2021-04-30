@@ -5,9 +5,20 @@
         ],
         "axiom": "F",
         "iterations": 10,
-        "step_size": 5,
-        "initial_heading": 90,
+        "step_size": 10,
+        "initial_heading": 0,
         "angle_increment": 90
+    },
+    "sierpinski_triangle": {
+        "ruleset": [
+            "F->F-G+F+G-F",
+            "G->GG"
+        ],
+        "axiom": "F-G-F",
+        "iterations": 10,
+        "step_size": 5,
+        "initial_heading": 0,
+        "angle_increment": 120
     },
     "dragon_curve": {
         "ruleset": [
@@ -19,5 +30,37 @@
         "step_size": 5,
         "initial_heading": 90,
         "angle_increment": 90
+    },
+    "plant": {
+        "ruleset": [
+            "R->L+[[R]-R]-L[-LR]+L",
+            "L->LL"
+        ],
+        "axiom": "R",
+        "iterations": 8,
+        "step_size": 2,
+        "initial_heading": 65,
+        "angle_increment": 25
+    },
+    "binary_tree": {
+        "ruleset": [
+            "R->RR",
+            "L->R[-L]+L"
+        ],
+        "axiom": "L",
+        "iterations": 10,
+        "step_size": 1,
+        "initial_heading": 90,
+        "angle_increment": 45
+    },
+    "pentaplexity": {
+        "ruleset": [
+            "F->F++F++F+++++F-F++F"
+        ],
+        "axiom": "F++F++F++F++F",
+        "iterations": 5,
+        "step_size": 5,
+        "initial_heading": 90,
+        "angle_increment": 36
     }
 }
