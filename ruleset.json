@@ -5,7 +5,27 @@
         ],
         "axiom": "F",
         "iterations": 10,
-        "step_size": 10,
+        "step_size": 5,
+        "initial_heading": 0,
+        "angle_increment": 90
+    },
+    "koch_snowflake": {
+        "ruleset": [
+            "F->F+F--F+F"
+        ],
+        "axiom": "F--F--F",
+        "iterations": 10,
+        "step_size": 5,
+        "initial_heading": 0,
+        "angle_increment": 60
+    },
+    "sausage": {
+        "ruleset": [
+            "F->F-F+F+FF-F-F+F"
+        ],
+        "axiom": "F+F+F+F",
+        "iterations": 5,
+        "step_size": 5,
         "initial_heading": 0,
         "angle_increment": 90
     },
@@ -62,5 +82,16 @@
         "step_size": 5,
         "initial_heading": 90,
         "angle_increment": 36
+    },
+    "gosper_curve": {
+        "ruleset": [
+            "L->L+R++R-L--LL-R+",
+            "R->-L+RR++R+L--L-R"
+        ],
+        "axiom": "L",
+        "iterations": 5,
+        "step_size": 5,
+        "initial_heading": 60,
+        "angle_increment": 60
     }
 }

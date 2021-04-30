@@ -18,6 +18,8 @@ def parse_args():
                         help='How many iterations to run? Careful, more than 25 is probably too many unless you have a lot of time.')
     parser.add_argument('-w', '--workers', default=4, type=int,   
                         help='How many workers to use?')
+    parser.add_argument('-s', '--step', default=None, type=float,   
+                        help='How long should each step be?')
     args = parser.parse_args()
     return args
 
@@ -37,7 +39,10 @@ if __name__ == "__main__":
         iterations = rules['iterations']
     else:
         iterations = args.iter
-    segment_length = rules['step_size']
+    if args.step is None:
+        segment_length = rules['step_size']  
+    else:
+        segment_length = args.step
     alpha_zero = rules['initial_heading']
     angle = rules['angle_increment']
 
@@ -51,5 +56,6 @@ if __name__ == "__main__":
     r_turtle = set_turtle(alpha_zero)
     turtle_screen = turtle.Screen()
     turtle_screen.screensize(4500, 4500)
+    turtle_screen.bgcolor("#f0d9ea")
     draw_l_system(r_turtle, model, segment_length, angle)
     turtle_screen.exitonclick()
