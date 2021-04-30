@@ -32,17 +32,24 @@ Here's an example of a plant-like generated L-system (Axial Tree) using the brac
 
 ![Axial Tree](https://s7.gifyu.com/images/ezgif.com-cropcc2d2a5cd782a90b.gif)
 
-For example, to create a [Dragon Curve](http://mathworld.wolfram.com/DragonCurve.html) enter the following:
+For example, to create a [Dragon Curve](http://mathworld.wolfram.com/DragonCurve.html) add the following to the ruleset.json:
 
 ```
-Enter rule[1]:rewrite term (0 when done): L->L+R+
-Enter rule[2]:rewrite term (0 when done): R->-L-R
-Enter rule[3]:rewrite term (0 when done): 0
-Enter axiom (initial string): L
-Enter number of iterations (n): 10
-Enter step size (segment length): 5
-Enter initial heading (alpha-0): 90
-Enter angle: 90
+"dragon_curve": {
+        "ruleset": [
+            "L->L+R+",
+            "R->-L-R"
+        ],
+        "axiom": "L",
+        "iterations": 10,
+        "step_size": 5,
+        "initial_heading": 90,
+        "angle_increment": 90
+    }
+```
+and then call lsystem from the command line:
+```
+> python lsystem -n dragon_curve
 ```
 
 > **Note**: Step size (segment length) is highly dependent on screen size, etc. Adjust as needed, but a good rule of thumb is a value between 5 and 10.
@@ -58,9 +65,7 @@ Cuadratic Snowflake | F->F+F-F-F+F w=-F n=4 alpha0=90 angle(i)=90
 Hexagonal Gosper curve | L->L+R++R-L--LL-R+ R->-L+RR++R+L--L-R w=L n=4 alpha0=60 angle(i)=60
 Axial Tree (node-rewriting) | X->F-[[X]+X]+F[+FX]-X F->FF w=X n=5 alpha0=90 angle(i)=22.5
 
-## Support
-
-For questions or comments:
+## Based on the original work done by:
 
 - Author: **Gianni Perez** @ [skylabus.com](https://www.skylabus.com) or at gianni.perez@us.ibm.com
 - [![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://uk.linkedin.com/in/gianni-perez)

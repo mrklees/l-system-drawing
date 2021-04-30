@@ -1,0 +1,13 @@
+{
+    "dragon_curve": {
+        "ruleset": [
+            "L->L+R+",
+            "R->-L-R"
+        ],
+        "axiom": "L",
+        "iterations": 10,
+        "step_size": 5,
+        "initial_heading": 90,
+        "angle_increment": 90
+    }
+}
