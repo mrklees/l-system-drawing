@@ -1,4 +1,14 @@
 {
+    "koch_curve": {
+        "ruleset": [
+            "F->F+F-F-F+F"
+        ],
+        "axiom": "F",
+        "iterations": 10,
+        "step_size": 5,
+        "initial_heading": 90,
+        "angle_increment": 90
+    },
     "dragon_curve": {
         "ruleset": [
             "L->L+R+",

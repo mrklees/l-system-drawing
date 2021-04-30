@@ -14,9 +14,9 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-n', '--name', default="dragon_curve", type=str,
                         help='Which figure do you want to render?')
-    parser.add_argument('-i', '--iter', default=20, type=int,   
+    parser.add_argument('-i', '--iter', default=10, type=int,   
                         help='How many iterations to run? Careful, more than 25 is probably too many unless you have a lot of time.')
-    parser.add_argument('-w', '--workers', default=8, type=int,   
+    parser.add_argument('-w', '--workers', default=4, type=int,   
                         help='How many workers to use?')
     args = parser.parse_args()
     return args
@@ -47,6 +47,6 @@ if __name__ == "__main__":
 
     r_turtle = set_turtle(alpha_zero)
     turtle_screen = turtle.Screen()
-    turtle_screen.screensize(1500, 1500)
-    draw_l_system(r_turtle, model[-1], segment_length, angle)
+    turtle_screen.screensize(4500, 4500)
+    draw_l_system(r_turtle, model, segment_length, angle)
     turtle_screen.exitonclick()

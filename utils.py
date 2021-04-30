@@ -6,12 +6,11 @@ from tqdm import tqdm
 SYSTEM_RULES = {}  # generator system rules for l-system
 
 def parallel_derivation(axiom, steps, n_workers=1, system_rules=SYSTEM_RULES):
-    derived = [axiom]  # seed
+    derived = axiom  # seed
     p = Pool(n_workers)
     for _ in tqdm(range(steps)):
-        next_seq = derived[-1]
-        next_axiom = p.map(partial(rule, system_rules=system_rules), next_seq)
-        derived.append(''.join(next_axiom))
+        next_axiom = p.map(partial(rule, system_rules=system_rules), derived)
+        derived = ''.join(next_axiom)
     return derived
 
 def derivation(axiom, steps):
