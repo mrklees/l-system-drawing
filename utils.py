@@ -28,10 +28,11 @@ def rule(sequence, system_rules):
         return system_rules[sequence]
     return sequence
 
-def draw_l_system(turtle, SYSTEM_RULES, seg_length, angle, palette="lavender_pink_grad"):
+def draw_l_system(turtle, SYSTEM_RULES, seg_length, angle, palette="blue_pink_grad"):
     stack = []
     palettes = {
-        "lavender_pink_grad": list(Color("#9D6079").range_to(Color("#FA5770"), 60))
+        "lavender_pink_grad": list(Color("#9D6079").range_to(Color("#FA5770"), 60)),
+        "blue_pink_grad": list(Color("#7eb8da").range_to(Color("#ffa5d8"), 60))
     }
     palette_iter = iter(palettes[palette])
 
