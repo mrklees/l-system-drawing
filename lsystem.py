@@ -26,7 +26,6 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    print(f"Generating {args.name}")
     
     ruleset = get_ruleset()
     rules = ruleset[args.name]
@@ -56,6 +55,6 @@ if __name__ == "__main__":
     r_turtle = set_turtle(alpha_zero)
     turtle_screen = turtle.Screen()
     turtle_screen.screensize(4500, 4500)
-    turtle_screen.bgcolor("#f0d9ea")
+    turtle_screen.bgcolor("#fefdfe")
     draw_l_system(r_turtle, model, segment_length, angle)
     turtle_screen.exitonclick()
